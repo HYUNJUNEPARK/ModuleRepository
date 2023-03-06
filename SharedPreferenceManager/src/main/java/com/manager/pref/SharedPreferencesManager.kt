@@ -1,7 +1,8 @@
-package com.module.sharedpreferencemanager
+package com.manager.pref
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.manager.pref.PrefConst.PREF_FILE_NAME
 
 /**
  * XML 파일 위치 : data > data > 패키지명 > shared_prefs > pref.xml
@@ -19,13 +20,12 @@ class SharedPreferencesManager private constructor(context: Context) {
         }
     }
 
-    private val prefFileName = "pref"
     private val prefs: SharedPreferences
     private val prefsEditor: SharedPreferences.Editor
 
     init {
         prefs = context.getSharedPreferences(
-            prefFileName,
+            PREF_FILE_NAME,
             Context.MODE_PRIVATE
         )
         prefsEditor = prefs.edit()

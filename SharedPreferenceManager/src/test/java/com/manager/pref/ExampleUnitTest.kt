@@ -1,4 +1,4 @@
-package com.module.sharedpreferencemanager
+package com.manager.pref
 
 import org.junit.Test
 

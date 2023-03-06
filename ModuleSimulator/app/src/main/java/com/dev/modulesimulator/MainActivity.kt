@@ -5,18 +5,21 @@ import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.dev.modulesimulator.databinding.ActivityMainBinding
+import com.manager.pref.SharedPreferencesManager
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
-
     companion object {
         const val TAG = "testLog"
     }
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var sharedPreferencesManager: SharedPreferencesManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.mainActivity = this@MainActivity
+
+        sharedPreferencesManager = SharedPreferencesManager.getInstance(applicationContext)
     }
 
     fun test1() {
